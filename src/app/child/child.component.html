@@ -1,0 +1,37 @@
+<div class="col-lg-8">
+  <div class="card-body py-5 px-md-5">
+   <form [formGroup]="userForm">
+    <div class="form-outline mb-4" [class.error]="userForm.controls['FirstName'].dirty && userForm.hasError('required','FirstName')">
+      <label class="form-label" for="form2Example1">First Name :</label>
+      <input formControlName="FirstName" type="text" id="form2Example1" class="form-control" />
+      <small class="text-danger" *ngIf="userForm.controls['FirstName'].dirty && userForm.hasError('required','FirstName')">*FirstName is required for this operations</small>
+    </div>
+    <div class="form-outline mb-4" [class.error]="userForm.controls['LastName'].dirty && userForm.hasError('required','LastName')">
+    <label class="form-label" for="form2Example1">Last Name :</label>
+      <input formControlName="LastName" type="text" id="form2Example1" class="form-control" />
+      <small class="text-danger" *ngIf="userForm.controls['LastName'].dirty && userForm.hasError('required','LastName')">*LastName is required for this operations</small>
+    </div>
+    <div class="form-outline mb-4" [class.error]="userForm.controls['EmailId'].dirty && userForm.hasError('required','EmailId')">
+      <label class="form-label" for="form2Example1">Email :</label>
+      <input formControlName="EmailId" type="email" id="form2Example1" class="form-control" />
+      <small class="text-danger" *ngIf="userForm.controls['EmailId'].dirty && userForm.hasError('required','EmailId')">*Email  is required for this operations</small>
+    </div>
+    <div class="form-outline mb-4" [class.error]="userForm.controls['PhoneNumber'].dirty && userForm.hasError('required','PhoneNumber')">
+      <label class="form-label" for="form2Example1">Phone Number :</label>
+      <input formControlName="PhoneNumber" type="text" id="form2Example1" class="form-control" />
+      <small class="text-danger" *ngIf="userForm.controls['PhoneNumber'].dirty && userForm.hasError('required','PhoneNumber')">*PhoneNumber  is required for this operations</small>
+    </div>
+    <button type="button" (click)="myreusable()"  class="btn btn-primary btn-block mb-4" [disabled]="!userForm.valid" >Sign in</button>
+   </form>
+  </div>
+</div>
+<div>
+
+<!-- <div class="col-lg-8">
+  <div class="card-body py-5 px-md-5">
+    <ul *ngFor="let d of Data">
+      <app-reusable [userdetail]="d"></app-reusable>
+    </ul>
+
+  </div>
+</div> -->

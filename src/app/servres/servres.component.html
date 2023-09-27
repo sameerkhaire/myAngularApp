@@ -1,0 +1,23 @@
+<p>servres works!</p>
+<h2>hey, My server Id is {{serverId}} and {{serverName}}</h2>
+<!-- <button [disabled]="!allowNewserver" class="btn btn-primary">Click Me</button> -->
+<button [disabled]="!allowNewserver" (click)="OnCreateServer()"  class="btn btn-primary">Click Me</button>
+<br/>
+<input type="text" class="form-control" (input)="onUpdateServer($event)">
+<br/>
+<input type="text" class="form-control" [(ngModel)]="serverNames">
+<p>{{serverNames | titlecase}}</p>
+<a>{{serverscreationstatus}}</a>
+<br/>
+<label>UserName</label>
+<input type="text" class="form-control" [(ngModel)]="userName">
+<p>{{userName|uppercase}}</p>
+<br/>
+<button class="btn btn-primary" [disabled]="userName === ''"  (click)="onsetr()">Reset Me</button>
+<br/>
+<p *ngIf="userName; else noServer">this is my {{serverNames}}</p>
+<ng-template #noServer>
+     <p>please fill the fields!!</p>
+</ng-template>
+<!-- <app-ar [data]="serverId" ()=""></app-ar> -->
+<h2>{{firstname|concatpip:lastname}}</h2>

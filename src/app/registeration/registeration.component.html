@@ -1,0 +1,11 @@
+<form [formGroup]="myForm" (ngSubmit)="submitForm()">
+  <!-- <input type="file" (change)="onFileSelected($event)" accept="image/*">
+<img *ngIf="imageUrl" [src]="imageUrl" alt="Preview"> -->
+  <label class="form-label" for="myex">First Name:</label>
+  <input type="text" id="myex" formControlName="FirstName" class="form-control" >
+  <label class="form-label" for="myex2">Last Name:</label>
+  <input type="text" id="myex2" formControlName="LastName" class="form-control" >
+  <button type="submit" class="btn btn-primary mt-3 mb-5 float">Submit</button>
+</form>
+<br/>
+<app-reusable [ddd]="myForm"></app-reusable>
